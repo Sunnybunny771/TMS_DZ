@@ -5,7 +5,6 @@ class Watches:
         self.diametr = diameter
         self.color = color
         self.form = form
-        
 # данный класс будет иметь 4 метода "снять, повесить часы, включить и выключить"
     def hang_up(self):
         return 'watches hanged up!'
@@ -15,52 +14,36 @@ class Watches:
         return 'watches switched ON'
     def remove(self):
         return 'watches removed!'
-# второй класс наследник электричество
+# второй класс  электричество
 class Electricity:
-    def __init__(self):
-        pass
-        
-
     def charge_up(self):
         return 'charged up!'
     def discharged(self):
         return 'discharged!'
-
 # третий класс наследник электро часы
-class Electro_watches(Watches, Electricity):
+class Electro_Watches(Watches, Electricity):
     def __init__(self, color_of_numbers, number_font, size, diameter, color, form):
         self.color_of_numbers = color_of_numbers
         self.number_font = number_font
         self.size = size
         super().__init__(diameter, color, form)
-        
-
-
-# c одним методом "установки времени"  
-    def install_time(self):
+    def install_time(self): # c одним методом "установки времени"
         return f'{self} time installed!'
-    
 # три объекта "наручные часы", "настенные часы" и "часы будильник"
 wall_watches = Watches(
-    diameter = '12',
+    diameter = 12,
     color = 'white', 
-    form = 'circle'
-    )
-
+    form = 'circle')
 alarm_wathces = Watches(
-    diameter = '8',
+    diameter = 8,
     color = 'black', 
-    form = 'square'
-    )
-
-hand_wathces = Electro_watches(
-    size = '3',
+    form = 'square')
+hand_wathces = Electro_Watches(
+    size = 3,
     color_of_numbers = 'red',
     number_font = 'digital',
-    diameter = '2',
+    diameter = 2,
     color = 'green',
-    form = 'circle',
-)
-
-print(Electro_watches.charge_up(hand_wathces))
-print(Electro_watches.off(hand_wathces))
+    form = 'circle')
+print(Electro_Watches.charge_up(hand_wathces))
+print(Electro_Watches.off(hand_wathces))

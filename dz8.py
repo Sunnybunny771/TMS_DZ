@@ -1,22 +1,21 @@
 from datetime import date
 class Person:
-    def __init__(self, name , age):
+    def __init__(self, name ):
          self.name = name
-         self.age = age
+         #self.age = age
 
-@classmethod
-def birth_year(cls, name, year):
-    return cls(name, date.today().year - year)
+    #@classmethod
+    #def birth_year(cls, name, year):
+        #return cls(name, date.today().year - year)
 
 
-@staticmethod
-def is_adult(age):
-    return age>18
+    @staticmethod
+    def is_adult(year_of_birth):
+        if 2021 - year_of_birth >= 18:
+            print('access is allowed')
+        else:
+            print('accsess is forbiden')
 
-person1 = Person('Misha', 23)
-person2 = Person('Kate',32)
+person1 = Person('Misha')
 
-#print(person1.name, person1.age)
-
-#print(person1.birth_year(2005))
-Person.is_adult(23)
+person1.is_adult(2005)

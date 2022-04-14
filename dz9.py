@@ -1,9 +1,9 @@
 
-class MyError(Exception):
-    print('You have to use only Y or N')
-
 # Основная функция вычисления 
 def calculate():
+    print('''
+    Welcom to Calculator!!
+    ''')
     operation = input('''
 Please type in the math operation you would like to complete:
 + for addition
@@ -37,26 +37,20 @@ Type:
         else:
             print('You have not typed a valid operator.')
             break
-# Функция для повторного вычисления 
-def repeat():
-    calc_again = input('''
-Do you want to calculate again?
-Please type Y for YES or N for NO.
-''')
-    if calc_again == 'Y':
-                calculate()
-    elif calc_again == 'N':
-                print('See you')    
-    else:
-        print('You have to use only Y or N')
-        repeat()
-            
-# Функция приветсвия 
-def welcom():
-    print('''
-    Welcom to Calculator!!
+                #  для повторного вычисления 
+    while True:
+        calc_again = input('''
+    Do you want to calculate again?
+    Please type Y for YES or N for NO.
     ''')
+        if calc_again == 'Y':
+                    calculate()
+                    break
+        elif calc_again == 'N':
+                    print('See you')
+                    break    
+        else:
+            print('You have to use only Y or N')
+            continue
 
-welcom()
 calculate()
-repeat()

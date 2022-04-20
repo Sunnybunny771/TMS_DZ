@@ -33,7 +33,7 @@ Type:
                 print('{} / {} = '.format(number_1, number_2), number_1 / number_2)
                 break
             except ZeroDivisionError as e: # отлавливаем ошибку деления на 0
-                print('Cannot be divided by 0')
+                print('цуецупцпецпуцпац')
         else:
             print('You have not typed a valid operator.')
             break

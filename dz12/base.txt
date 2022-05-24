@@ -1,0 +1,33 @@
+CREATE TABLE customers(
+    customers_id INTEGER PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    age INTEGER
+);
+
+CREATE TABLE contacts_of_castomers(
+    contacts_id INTEGER PRIMARY KEY,
+    phone INTEGER NOT NULL,
+    email TEXT NOT NULL,
+    adress TEXT,
+    customer_id INTEGER NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
+
+INSERT INTO customers(first_name, last_name, age) VALUES("Petja", "Ruchka", 43);
+INSERT INTO customers(first_name, last_name, age) VALUES("Katya", "Shilo", 24);
+INSERT INTO customers(first_name, last_name, age) VALUES("Sveta", "Buniko", 19);
+INSERT INTO customers(first_name, last_name, age) VALUES("Stepa", "Vasili", 36);
+UPDATE customers SET first_name = "Bill", age = 32 WHERE customers_id = 4; 
+
+ALTER TABLE customers ADD COLUMN phone TEXT;
+ALTER TABLE customers DROP COLUMN phone;
+
+INSERT INTO contacts_of_castomers(phone, email, adress, customer_id) VALUES(2342123, "fasfa@gmail.com", "Resti Str", 2);
+INSERT INTO contacts_of_castomers(phone, email, adress, customer_id) VALUES(8756789876, "asfwvfwf@gmail.com", "Rostov Str", 4);
+INSERT INTO contacts_of_castomers(phone, email, adress, customer_id) VALUES(09876587, "mnbvcf@gmail.com", "Mayak Str", 1);
+INSERT INTO contacts_of_castomers(phone, email, adress, customer_id) VALUES(0987654567, "oiuytrerfgh@gmail.com", "White Str", 3);
+
+SELECT first_name, last_name, C.phone, C.adress FROM customers JOIN contacts_of_castomers C WHERE customers.customers_id == C.customer_id;
+SELECT first_name, last_name, C.phone, C.adress FROM customers JOIN contacts_of_castomers C WHERE customers.customers_id > 2 and C.customer_id < 3;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Sunny</span>
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/registration" class="nav-link active" aria-current="page">Registration</a></li>
+          <li class="nav-item"><a href="/home" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="/users" class="nav-link">Users</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        </ul>
+      </header>
+
+    {% block body %}{% endblock body %}
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+          <div>
+            <h4 class="fw-bold mb-0">Высокое качество</h4>
+            <p>Мы задаем высокие стандарты качества.</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
+          <div>
+            <h4 class="fw-bold mb-0">Лучшие на рынке</h4>
+            <p>Являемся лидерами рынка в 2021 году.</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
+          <div>
+            <h4 class="fw-bold mb-0">Зарекомендованы своими клиентами</h4>
+            <p>Мы имеем свыше 2000 положительных отзывов.</p>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

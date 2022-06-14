@@ -9,10 +9,10 @@
     <h1>Подробно</h1>
     {% for user in users %}
     <div class="alert alert-info">
-        <h2>{{ el.first_name }}</h2>
-        <p>{{ el.name }}</p>
-        <p>{{ el.username }}</p>
-        <p>{{ el.email }}</p>
+        <h2>{{ user.first_name }}</h2>
+        <p>{{ user.name }}</p>
+        <p>{{ user.username }}</p>
+        <p>{{ user.email }}</p>
     </div>
     {% endfor %}
 </div>

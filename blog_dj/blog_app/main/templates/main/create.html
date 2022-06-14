@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    New post
+{% endblock title %}
+{% block main %}
+    <h1>Here you can add new post</h1><br>
+    <form method='post'>
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.text }}<br>
+        <button type="submite"class="btn btn-success">Add Post</button>
+        <span>{{ error }}</span>
+    </form>
+
+{% endblock main %}

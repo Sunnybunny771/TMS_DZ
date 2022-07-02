@@ -1,9 +1,8 @@
 
 from django.shortcuts import render, redirect
 
-from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 
 from .forms import PostForm
@@ -11,6 +10,8 @@ from .forms import NewUserForm
 from .models import Post
 
 # Create your views here.
+
+
 def login_request(request):
 	if request.method == "POST":
 		form = AuthenticationForm(request, data=request.POST)
@@ -54,7 +55,7 @@ def index(request):
     return render(request, 'main/index.html', {'title': 'Main page', 'posts' : posts})
 
 
-def create(request):
+def create_post(request):
     error = ''
     if request.method == 'POST':
         form = PostForm(request.POST)

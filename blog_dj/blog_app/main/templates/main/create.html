@@ -8,6 +8,7 @@
         {% csrf_token %}
         {{ form.title }}<br>
         {{ form.text }}<br>
+        {{form.User}}
         <button type="submite"class="btn btn-success">Add Post</button>
         <span>{{ error }}</span>
     </form>

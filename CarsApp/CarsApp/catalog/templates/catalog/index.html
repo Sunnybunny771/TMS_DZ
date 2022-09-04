@@ -1,0 +1,13 @@
+{% extends 'layout/basic.html' %}
+
+{% block content %}
+{% for car in allcars %}
+<div>
+    <h2>{{ car.brand }}</h2>
+    <p>{{ car.type }}</p>
+    <p>{{ car.engine }}</p>
+    <p>{{ car.published }}</p>
+
+</div>
+{% endfor %}
+{% endblock %}
